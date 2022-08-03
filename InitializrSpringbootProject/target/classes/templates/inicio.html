@@ -1,0 +1,55 @@
+
+<!DOCTYPE>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Registro de libros</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+
+
+         <form class="formulario" th:action="@{/inicio}" method="POST">
+  <div class="mb-3">
+   
+    <select class="form-select mt-2" id="selectToastPlacement">
+        
+      <option value="" selected>Select a position...</option>
+      <option value="top-0 start-0">Top left</option>
+      <option value="top-0 start-50 translate-middle-x">Top center</option>
+      <option value="top-0 end-0">Top right</option>
+      <option value="top-50 start-0 translate-middle-y">Middle left</option>
+      <option value="top-50 start-50 translate-middle">Middle center</option>
+      <option value="top-50 end-0 translate-middle-y">Middle right</option>
+      <option value="bottom-0 start-0">Bottom left</option>
+      <option value="bottom-0 start-50 translate-middle-x">Bottom center</option>
+      <option value="bottom-0 end-0">Bottom right</option>
+    </select>
+      <li><a class="dropdown-item" href="/logout">Cerrar Sesion!</a></li>
+  </div>
+</form>
+<div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+  <div class="toast-container p-3" id="toastPlacement">
+    <div class="toast">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Biblioteca!</strong>
+        <small>Yuju!</small>
+      </div>
+      <div class="toast-body">
+       Bienvenido al inicio!
+      </div>
+    </div>
+  </div>
+</div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Registro de libros</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <form class="formulario" th:action="@{/registro}" method="POST">
+            <h2>REGISTRATE!</h2>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" placeholder="NOMBRE" th:value="${nombre}">
+                </div>
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="EMAIL" th:value="${email}">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" th:value="${password}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password2" placeholder="REPETIR CONTRASEÑA" th:value="${password2}">
+            </div>
+            <button type="submit" class="btn btn-primary">REGISTRARME</button>
+
+            <div th:if="${err != null}" class="card text-white bg-danger mb-3 mensajeError">
+                <div class="card-body">
+                    <h5 class="card-tittle">Error!!!</h5>
+                    <p class="card-text" th:text = "${err}"></p>
+                </div>
+            </div>
+            <div th:if="${exito != null}" class="card text-white bg-danger mb-3 mensajeExito">
+                <div class="card-body">
+                    <h5 class="card-tittle">EXITO!!!</h5>
+                    <p class="card-text" th:text = "${exito}"></p>
+                </div> 
+            </div> 
+        </form>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

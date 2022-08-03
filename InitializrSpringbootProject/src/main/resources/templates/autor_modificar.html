@@ -1,0 +1,45 @@
+<!DOCTYPE>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8">
+        <title>Biblioteca</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+
+
+
+        <div class="container">
+            <form class="formulario" th:action="@{/autor/modificar/__${autor.id}__}" method="POST">
+                <input hidden th:value="${id}" name="id">
+
+                <div class="form-group my-3">  
+                    <label class="mb-2">Carga el autor aquí!!!</label> 
+
+                    <div class="form-group">
+                        <input  th:value="${autor.nombre}" type="text" class="form-group" name="nombre" placeholder="Ingrese el nuevo nombre">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+           
+        </div>    
+            </form>
+    </div>
+    <div th:if="${err != null}" class="card text-white bg-danger mb-3 mensajeError">
+        <div class="card-body">
+            <h5 class="card-tittle">Error!!!</h5>
+            <p class="card-text" th:text="${err}"></p>
+        </div>
+    </div>
+    <div th:if="${exito != null}" class="card text-white bg-danger mb-3 mensajeExito">
+        <div class="card-body">
+            <h5 class="card-tittle">EXITO!!!</h5>
+            <p class="card-text" th:text="${exito}"></p>
+        </div> 
+    </div>
+
+</body>
+</html>
+
